@@ -114,6 +114,7 @@ pub fn gnu_target(target: &str) -> &str {
         "x86_64-pc-windows-msvc" => "x86_64-pc-win32",
         "i686-pc-windows-gnu" => "i686-w64-mingw32",
         "x86_64-pc-windows-gnu" => "x86_64-w64-mingw32",
+        "aarch64-pc-windows-gnu" => "aarch64-w64-mingw32",
         s => s,
     }
 }

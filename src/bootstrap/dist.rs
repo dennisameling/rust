@@ -163,6 +163,8 @@ fn make_win_dist(
         "i686-w64-mingw32-gcc.exe"
     } else if target == "x86_64-pc-windows-gnu" {
         "x86_64-w64-mingw32-gcc.exe"
+    } else if target == "aarch64-pc-windows-gnu" {
+        "aarch64-w64-mingw32-gcc.exe"
     } else {
         "gcc.exe"
     };
@@ -170,7 +172,7 @@ fn make_win_dist(
     let mut rustc_dlls = vec!["libwinpthread-1.dll"];
     if target.starts_with("i686-") {
         rustc_dlls.push("libgcc_s_dw2-1.dll");
-    } else {
+    } else if target.starts_with("x86_64-") {
         rustc_dlls.push("libgcc_s_seh-1.dll");
     }
 
@@ -182,7 +184,7 @@ fn make_win_dist(
         "libm.a",
         "libmingw32.a",
         "libmingwex.a",
-        "libstdc++.a",
+        //"libstdc++.a",
         "libiconv.a",
         "libmoldname.a",
         "libpthread.a",
