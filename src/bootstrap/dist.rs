@@ -184,7 +184,7 @@ fn make_win_dist(
         "libm.a",
         "libmingw32.a",
         "libmingwex.a",
-        //"libstdc++.a",
+        "libstdc++.a",
         "libiconv.a",
         "libmoldname.a",
         "libpthread.a",
